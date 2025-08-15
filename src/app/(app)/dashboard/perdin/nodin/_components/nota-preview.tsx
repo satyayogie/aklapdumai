@@ -110,7 +110,7 @@ export function NotaPreview({ data, mode = "preview" }: NotaPreviewProps) {
 
         {/* Header Info - SPASI DIKURANGI */}
         <div className="header-info">
-          <table className="info-table">
+          <table className="info-table border-b-black border-b-1">
             <tbody>
               <tr>
                 <td className="label">Yth.</td>
@@ -165,7 +165,7 @@ export function NotaPreview({ data, mode = "preview" }: NotaPreviewProps) {
           </p>
         </div>
 
-        {/* Tabel Utama */}
+        {/* Tabel Utama - STRUKTUR DIPERBAIKI */}
         <div className="main-table-container">
           <table className="main-table">
             <tbody>
@@ -189,41 +189,46 @@ export function NotaPreview({ data, mode = "preview" }: NotaPreviewProps) {
                 </td>
               </tr>
 
-              {/* Atas Nama dengan Tabel Peserta */}
+              {/* PERBAIKAN: Atas Nama ditulis dalam baris terpisah */}
               <tr>
                 <td className="main-label">Atas Nama</td>
                 <td className="main-colon">:</td>
-                <td className="zero-padding">
-                  <table className="peserta-table">
-                    <thead>
-                      <tr>
-                        <th className="peserta-no">No</th>
-                        <th className="peserta-nama">Nama/NIP</th>
-                        <th className="peserta-pangkat">Pangkat/Gol</th>
-                        <th className="peserta-jabatan">Jabatan</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      {processedData.pesertaList.map((peserta, index) => (
-                        <tr key={peserta.id || index}>
-                          <td className="peserta-no">{index + 1}.</td>
-                          <td className="peserta-nama">
-                            <div className="nama-line">{peserta.nama}</div>
-                            <div className="nip-line">NIP. {peserta.nip}</div>
-                          </td>
-                          <td className="peserta-pangkat">
-                            <div>{peserta.pangkat}</div>
-                            <div>({peserta.golongan})</div>
-                          </td>
-                          <td className="peserta-jabatan">{peserta.jabatan}</td>
-                        </tr>
-                      ))}
-                    </tbody>
-                  </table>
+                <td className="main-value">
+                  {/* Kosongkan atau bisa diisi dengan keterangan singkat */}
                 </td>
               </tr>
             </tbody>
           </table>
+
+          {/* PERBAIKAN: Tabel Peserta dipindah ke luar, di bawah tabel utama */}
+          <div className="peserta-table-wrapper">
+            <table className="peserta-table">
+              <thead>
+                <tr>
+                  <th className="peserta-no">No</th>
+                  <th className="peserta-nama">Nama/NIP</th>
+                  <th className="peserta-pangkat">Pangkat/Gol</th>
+                  <th className="peserta-jabatan">Jabatan</th>
+                </tr>
+              </thead>
+              <tbody>
+                {processedData.pesertaList.map((peserta, index) => (
+                  <tr key={peserta.id || index}>
+                    <td className="peserta-no">{index + 1}.</td>
+                    <td className="peserta-nama">
+                      <div className="nama-line">{peserta.nama}</div>
+                      <div className="nip-line">NIP. {peserta.nip}</div>
+                    </td>
+                    <td className="peserta-pangkat">
+                      <div>{peserta.pangkat}</div>
+                      <div>({peserta.golongan})</div>
+                    </td>
+                    <td className="peserta-jabatan">{peserta.jabatan}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
         </div>
 
         {/* Biaya Perjalanan */}

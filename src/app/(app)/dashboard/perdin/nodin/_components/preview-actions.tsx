@@ -71,7 +71,7 @@ export function PreviewActions({ draftId }: Props) {
   const handlePrint = useCallback(async () => {
     if (isPrinting) return;
 
-    console.log('🖨️ Starting ENHANCED print process for Word-like format');
+    console.log('🖨️ Starting ENHANCED print process');
     setIsPrinting(true);
     toast.info("Mempersiapkan dokumen untuk dicetak...");
 
@@ -84,7 +84,6 @@ export function PreviewActions({ draftId }: Props) {
 
       console.log('✅ Print document found');
 
-      // Step 2: Enhanced print styles for perfect Word-like formatting
       const printStyles = document.createElement('style');
       printStyles.id = 'enhanced-print-styles';
       printStyles.textContent = `
@@ -93,6 +92,10 @@ export function PreviewActions({ draftId }: Props) {
           @page {
             size: A4 portrait;
             margin: 20mm;
+          }
+
+          @page :first {
+            margin: 5mm 20mm 20mm 20mm;
           }
 
           /* Hide everything except print content */
@@ -274,7 +277,7 @@ export function PreviewActions({ draftId }: Props) {
           console.log('✅ Print completed successfully');
           window.removeEventListener('afterprint', handleAfterPrint);
           cleanup();
-          toast.success("Dokumen berhasil dicetak (format sesuai template Word)");
+          toast.success("Dokumen berhasil dicetak");
           resolve();
         };
 
@@ -333,9 +336,6 @@ export function PreviewActions({ draftId }: Props) {
               </div>
               <div>
                 <h2 className="font-semibold text-lg">Preview Nota Dinas</h2>
-                <p className="text-sm text-muted-foreground">
-                  Format sesuai template Word - Arial 12px dengan spacing ketat seperti dokumen asli
-                </p>
               </div>
             </div>
 
@@ -371,7 +371,7 @@ export function PreviewActions({ draftId }: Props) {
               ) : (
                 <>
                   <Printer className="h-4 w-4" />
-                  Cetak (Format Word)
+                  Cetak
                 </>
               )}
             </Button>
