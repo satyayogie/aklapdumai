@@ -1,0 +1,20 @@
+{
+  "version": "7",
+  "dialect": "postgresql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "7",
+      "when": 1755072899606,
+      "tag": "0000_easy_songbird",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1755073961555,
+      "tag": "0001_split-pangkat-golongan",
+      "breakpoints": true
+    }
+  ]
+}

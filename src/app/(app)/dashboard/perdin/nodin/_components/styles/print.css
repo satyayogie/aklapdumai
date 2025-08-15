@@ -1,0 +1,486 @@
+/* ULTRA SIMPLE PRINT CSS - GUARANTEED TO WORK */
+
+/* ===== SCREEN STYLES ===== */
+@media screen {
+  .preview-page {
+    min-height: 100vh;
+    background: #f8f9fa;
+  }
+
+ .print-container {
+    display: flex;
+    justify-content: center;
+    background: #f8f9fa;
+    min-height: calc(100vh - 200px);
+  }
+
+  .print-document {
+    width: 210mm;
+    min-height: 297mm;
+    margin: 0 auto;
+    background: white;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+    padding: 20mm;
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    line-height: 1.2;
+    color: black;
+    position: relative;
+  }
+
+  /* Hide non-print content on screen preview */
+  .no-print {
+    display: block;
+  }
+}
+
+/* ===== DOCUMENT STRUCTURE ===== */
+.document-header {
+  margin: 0;
+}
+
+.header-content {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 15pt;
+}
+
+.header-logo {
+  flex-shrink: 0;
+  width: 45pt;
+}
+
+.logo-print {
+  width: 45pt;
+  height: auto;
+  object-fit: contain;
+  max-width: 45pt;
+}
+
+.header-text {
+  flex: 1;
+  text-align: center;
+}
+
+.header-title-main {
+  font-size: 12pt;
+  font-weight: bold;
+  line-height: 1.2;
+  margin-bottom: 2pt;
+  color: black;
+}
+
+.header-title-sub {
+  font-size: 12pt;
+  font-weight: bold;
+  line-height: 1.2;
+  margin-bottom: 2pt;
+  color: black;
+}
+
+.header-address {
+  font-size: 8pt;
+  line-height: 1.3;
+  margin-top: 2pt;
+  color: black;
+}
+
+.header-border {
+  width: 100%;
+  height: 2pt;
+  background-color: black;
+  margin-top: 4pt;
+  margin-bottom: 10pt;
+}
+
+.document-title {
+  text-align: center;
+  margin-bottom: 20pt;
+}
+
+.document-title h1 {
+  font-size: 12pt;
+  font-weight: bold;
+  text-decoration: underline;
+  margin: 0;
+  letter-spacing: 0.5pt;
+  color: black;
+}
+
+/* Tables */
+.header-info {
+  margin-bottom: 15pt;
+}
+
+.info-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12pt;
+}
+
+.info-table td {
+  padding: 1pt 0;
+  vertical-align: top;
+  border: none;
+  color: black;
+}
+
+.info-table .label {
+  width: 80pt;
+  color: black;
+}
+
+.info-table .colon {
+  width: 10pt;
+  text-align: center;
+  color: black;
+}
+
+.info-table .value {
+  flex: 1;
+  color: black;
+}
+
+.info-table .bold {
+  font-weight: bold;
+  color: black;
+}
+
+.opening {
+  margin-bottom: 10pt;
+  font-size: 12pt;
+  line-height: 1.25;
+}
+
+.opening p {
+  margin: 8pt 0;
+  text-align: justify;
+  color: black;
+}
+
+.opening .indent {
+  text-indent: 30pt;
+}
+
+.main-table-container {
+  margin-bottom: 15pt;
+}
+
+.main-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12pt;
+}
+
+.main-table td {
+  padding: 4pt 6pt;
+  vertical-align: top;
+  border: none;
+  color: black;
+}
+
+.main-label {
+  width: 80pt;
+  font-weight: bold;
+  color: black;
+}
+
+.main-colon {
+  width: 10pt;
+  text-align: center;
+  font-weight: bold;
+  color: black;
+}
+
+.main-value {
+  text-align: justify;
+  line-height: 1.25;
+  color: black;
+}
+
+.zero-padding {
+  padding: 0;
+}
+
+.peserta-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0;
+  font-size: 10pt;
+}
+
+.peserta-table th,
+.peserta-table td {
+  border: 1pt solid black;
+  padding: 6pt 8pt;
+  vertical-align: top;
+  text-align: left;
+  color: black;
+}
+
+.peserta-table th {
+  background-color: #f0f0f0;
+  font-weight: bold;
+  text-align: center;
+  color: black;
+}
+
+.peserta-no {
+  width: 30pt;
+  text-align: center;
+}
+
+.peserta-nama {
+  width: 140pt;
+}
+
+.peserta-pangkat {
+  width: 80pt;
+  text-align: center;
+}
+
+.peserta-jabatan {
+  width: auto;
+}
+
+.nama-line {
+  font-weight: bold;
+  margin-bottom: 2pt;
+  color: black;
+}
+
+.nip-line {
+  font-size: 9pt;
+  color: #333;
+}
+
+.biaya-section {
+  margin-bottom: 10pt;
+}
+
+.biaya-title {
+  font-weight: bold;
+  margin-bottom: 8pt;
+  font-size: 12pt;
+  color: black;
+}
+
+.biaya-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12pt;
+}
+
+.biaya-table td {
+  padding: 2pt 4pt;
+  vertical-align: top;
+  border: none;
+  color: black;
+}
+
+.biaya-label {
+  width: 100pt;
+  color: black;
+}
+
+.biaya-colon {
+  width: 10pt;
+  text-align: center;
+  color: black;
+}
+
+.biaya-kode {
+  width: 100pt;
+  font-size: 12pt;
+  color: black;
+}
+
+.biaya-nama {
+  text-align: justify;
+  line-height: 1.25;
+  color: black;
+}
+
+.closing {
+  margin-bottom: 15pt;
+  font-size: 12pt;
+}
+
+.closing .indent {
+  text-indent: 30pt;
+  text-align: justify;
+  line-height: 1.25;
+  color: black;
+}
+
+.document-footer {
+  margin-top: 15pt;
+}
+
+.signature-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20pt;
+}
+
+.disposisi-column {
+  width: 38%;
+}
+
+.disposisi-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.disposisi-table th {
+  border: 2pt solid black;
+  padding: 8pt;
+  background-color: white;
+  font-weight: bold;
+  font-size: 12pt;
+  text-align: center;
+  color: black;
+}
+
+.disposisi-content-cell {
+  border: 2pt solid black;
+  border-top: none;
+  height: 80pt;
+  padding: 8pt;
+  background-color: white;
+}
+
+.signature-column {
+  width: 35%;
+  text-align: center;
+  font-size: 12pt;
+}
+
+.signature-text {
+  margin-bottom: 8pt;
+  color: black;
+}
+
+.signature-space {
+  height: 40pt;
+  margin: 15pt 0;
+}
+
+.signer-name {
+  font-weight: bold;
+  margin-bottom: 4pt;
+  color: black;
+  border-bottom: 1px solid black;
+  padding-bottom: 2pt;
+}
+
+.signer-nip {
+  font-size: 10pt;
+  color: black;
+}
+
+/* ===== ULTRA SIMPLE PRINT STYLES ===== */
+@media print {
+  /* Page setup */
+  @page {
+    size: A4 portrait;
+    margin: 2cm;
+  }
+
+  /* Hide everything first */
+  * {
+    visibility: hidden;
+  }
+
+  /* Show only print content */
+  .print-container,
+  .print-container * {
+    visibility: visible;
+  }
+
+  /* Position at top of page */
+  .print-container {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: auto;
+    background: white;
+    margin: 0;
+    padding: 0;
+  }
+
+  .print-document {
+    width: 100%;
+    height: auto;
+    background: white;
+    color: black;
+    font-family: "Times New Roman", serif;
+    font-size: 12pt;
+    margin: 0;
+    padding: 0;
+    box-shadow: none;
+  }
+
+  /* Ensure proper display */
+  .header-content,
+  .signature-container {
+    display: flex !important;
+  }
+
+  /* Tables */
+  table {
+    display: table !important;
+    border-collapse: collapse !important;
+  }
+
+  tr {
+    display: table-row !important;
+  }
+
+  td, th {
+    display: table-cell !important;
+  }
+
+  /* Force important colors */
+  .header-border {
+    background-color: black !important;
+    -webkit-print-color-adjust: exact;
+    color-adjust: exact;
+  }
+
+  .peserta-table th,
+  .peserta-table td,
+  .disposisi-table th,
+  .disposisi-table td {
+    border: 1px solid black !important;
+    -webkit-print-color-adjust: exact;
+    color-adjust: exact;
+  }
+
+  .peserta-table th {
+    background-color: #f0f0f0 !important;
+    -webkit-print-color-adjust: exact;
+    color-adjust: exact;
+  }
+
+  /* Hide screen-only elements */
+  .no-print {
+    display: none !important;
+    visibility: hidden !important;
+  }
+
+  /* Typography */
+  .document-title h1 {
+    text-decoration: underline !important;
+    font-weight: bold !important;
+    text-align: center !important;
+  }
+
+  /* Ensure black text */
+  * {
+    color: black !important;
+  }
+}
